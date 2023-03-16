@@ -14,13 +14,15 @@ function Layout({ children }: LayoutProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <header className="bg-stone-500 py-[12px] px-[19px] mb-[45px]">
-          <h2 className="text-5xl text-white">
+      <main className="h-full">
+        <header className="bg-stone-500 py-[12px] px-[19px] mb-[15px] md:mb-[45px]">
+          <h2 className="text-3xl md:text-5xl text-white">
             <Link href="/">Exhibitions!</Link>
           </h2>
         </header>
-        <div className="container mx-auto">{children}</div>
+        <div className="container mx-auto px-[15px] md:px-0 h-full">
+          {children}
+        </div>
       </main>
     </>
   );

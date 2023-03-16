@@ -11,7 +11,7 @@ function Exhibition({ exhibition, error }: ExhibitionProps) {
   if (error) {
     return (
       <div className="text-center mt-[50px]">
-        <h1>404 - Exhibition not found</h1>
+        <h1 className="text-2xl">404 - Exhibition not found</h1>
       </div>
     );
   }

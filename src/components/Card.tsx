@@ -11,8 +11,11 @@ type CardProps = {
 function Card({ exhibition }: CardProps) {
   return (
     <>
-      <Link href={`/exhibition/${encodeURIComponent(exhibition.id)}`}>
-        <div className="max-w-[313px] h-48 overflow-hidden">
+      <Link
+        href={`/exhibition/${encodeURIComponent(exhibition.id)}`}
+        className="text-center md:text-start"
+      >
+        <div className="max-w-[313px] h-48 overflow-hidden mx-auto md:mx-0">
           <Picture
             src={exhibition.image_url}
             width={313}
@@ -22,7 +25,7 @@ function Card({ exhibition }: CardProps) {
           />
         </div>
         <h3 className="text-lg mt-2">{exhibition.title}</h3>
-        <time className="text-sm italic">
+        <time className="text-sm italic block">
           {formatDate(exhibition.aic_start_at)} -{" "}
           {formatDate(exhibition.aic_end_at)}
         </time>
