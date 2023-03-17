@@ -1,11 +1,17 @@
-import Link from "next/link";
-import React from "react";
+import { useRouter } from "next/router";
 
 function BackButton() {
+  const router = useRouter();
+
   return (
-    <Link className="text-blue-500 hover:underline" href="/">
+    <button
+      className="text-blue-500 hover:underline"
+      onClick={() => {
+        router.back();
+      }}
+    >
       &lt;- Back
-    </Link>
+    </button>
   );
 }
 

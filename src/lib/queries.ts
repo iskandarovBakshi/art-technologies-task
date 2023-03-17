@@ -2,7 +2,7 @@ import { IExhibitionResponse } from "@/interfaces";
 
 const baseUrl = process.env.NEXT_PUBLIC_API_URL;
 
-async function get(path: RequestInfo | URL, config: RequestInit = {}) {
+async function get(path: string, config?: RequestInit) {
   const response = await fetch(`${baseUrl}${path}`, {
     method: "GET",
     ...config,
