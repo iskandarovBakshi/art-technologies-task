@@ -20,6 +20,7 @@ export default function HomePage({ data }: HomePageProps) {
 
 export async function getServerSideProps() {
   const exhibitions = await getExhibitions();
+
   return {
     props: {
       data: exhibitions,
