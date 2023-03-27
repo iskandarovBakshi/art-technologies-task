@@ -24,6 +24,6 @@ export interface IExhibitionResponse {
 }
 
 export interface IExhibitionNotFound {
-  error: string;
-  hasError: boolean;
+  message: string;
+  status: number;
 }

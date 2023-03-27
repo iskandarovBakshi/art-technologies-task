@@ -1,6 +1,6 @@
 import Card from "@/components/Card";
 import { IExhibitionResponse } from "@/interfaces";
-import { getExhibitions } from "@/lib/queries";
+import { getExhibitions } from "@/service/exhibition";
 import React, { useRef, useState } from "react";
 import InfiniteScroll from "react-infinite-scroller";
 
@@ -22,12 +22,12 @@ function Home({ data }: HomeProps) {
     }
     const url = new URL(exhibitionsData.pagination.next_url);
     isLoading.current = true;
-    getExhibitions(url.search).then((moreExhibitions) => {
+    getExhibitions(url.search).then(({ exhibitions }) => {
       setExhibitionsData({
         pagination: {
-          ...moreExhibitions.pagination,
+          ...exhibitions.pagination,
         },
-        data: [...exhibitionsData.data, ...moreExhibitions.data],
+        data: [...exhibitionsData.data, ...exhibitions.data],
       });
       isLoading.current = false;
     });

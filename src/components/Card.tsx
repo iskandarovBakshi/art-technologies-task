@@ -1,5 +1,5 @@
 import { IExhibition } from "@/interfaces";
-import { formatDate } from "@/lib/utilities";
+import { formatDate } from "@/utils";
 import Link from "next/link";
 import React from "react";
 import Picture from "./Picture";

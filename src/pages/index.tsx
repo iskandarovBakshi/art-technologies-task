@@ -1,6 +1,6 @@
 import Home from "@/components/pages/Home/Home";
 import { IExhibitionResponse } from "@/interfaces";
-import { getExhibitions } from "@/lib/queries";
+import { getExhibitions } from "@/service/exhibition";
 import Head from "next/head";
 
 type HomePageProps = {
@@ -18,12 +18,13 @@ export default function HomePage({ data }: HomePageProps) {
   );
 }
 
-export async function getServerSideProps() {
-  const exhibitions = await getExhibitions();
+export async function getStaticProps() {
+  const { exhibitions } = await getExhibitions();
 
   return {
     props: {
       data: exhibitions,
     },
+    revalidate: 3600,
   };
 }
