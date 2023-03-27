@@ -1,4 +1,4 @@
-import { IExhibitionDetail, IExhibitionResponse } from "@/interfaces";
+import { IExhibitionResponse } from "@/interfaces";
 import { get } from "./instance";
 
 export async function getExhibitions(search?: string) {
